@@ -11,7 +11,7 @@ nanoid_initialize_random();
 
 To generate an ID, simply call:
 ```
-myid := generate_nanoid();
+myid := nanoid_generate();
 ```
 
 You can optionally pass alphabet and size parameters to control the alphabet and size.
