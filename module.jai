@@ -2,12 +2,12 @@
 #import "String";
 #import "Basic";
 
-setup_nanoid :: () {
+nanoid_initialize_random :: () {
   time := current_time_consensus();
   random_seed(cast(u64) time.low);
 }
 
-generate_nanoid :: (alphabet: string = "abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV123456789_-", size: int = 21) -> string {
+nanoid_generate :: (alphabet: string = "abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV123456789_-", size: int = 21) -> string {
   nanoid : string;
   nanoid.data = alloc(size);
   nanoid.count = size;
