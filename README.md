@@ -2,7 +2,7 @@ A (so far quite naive) implementation of [NanoID](https://github.com/ai/nanoid) 
 
 # Usage
 
-NOTE: Before you generate nanoids with this library, you must initialize your random seed. We provide
+NOTE: Before you generate NanoIDs with this library, you must initialize your random seed. We provide
 a helpful utility function for this:
 ```
 nanoid_initialize_random();
