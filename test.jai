@@ -4,8 +4,7 @@
 main :: () {
   print("Testing...\n");
 
-  time := current_time_consensus();
-  random_seed(cast(u64) time.low);
+  setup_nanoid();
 
   nanoid := generate_nanoid();
 

@@ -2,7 +2,11 @@
 #import "String";
 #import "Basic";
 
-// To do: add the actual full list of characters
+setup_nanoid :: () {
+  time := current_time_consensus();
+  random_seed(cast(u64) time.low);
+}
+
 generate_nanoid :: (alphabet: string = "abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV123456789_-", size: int = 21) -> string {
   nanoid : string;
   nanoid.data = alloc(size);
