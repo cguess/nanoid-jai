@@ -2,35 +2,17 @@
 #import "String";
 #import "Basic";
 
-Id :: struct {
-  content : string;
-  size : int;
-  alphabet : string;
-}
-
 // To do: add the actual full list of characters
-generate_nanoid :: (alphabet: string = "abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV123456789_-", size: int = 21) -> *Id {
-  id := New(Id);
-
-  id.size = size;
-  id.alphabet = alphabet;
-
-  nano_id := "";
-
-  s : string;
-  s.data = alloc(size);
-  s.count = size;
-
-  time := current_time_consensus();
-  random_seed(cast(u64) time.low);
+generate_nanoid :: (alphabet: string = "abcedfghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV123456789_-", size: int = 21) -> string {
+  nanoid : string;
+  nanoid.data = alloc(size);
+  nanoid.count = size;
 
   for i: 0..size - 1 {
-    s[i] = random_character(alphabet);
+    nanoid[i] = random_character(alphabet);
   }
 
-  id.content = s;
-
-  return id;
+  return nanoid;
 }
 
 #scope_file
